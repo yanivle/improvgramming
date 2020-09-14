@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <title>Improvgramming - Shader</title>
+  <style type="text/css" media="screen">
+    #editor {}
+
+    body {
+      padding: 10px;
+    }
+
+    #c {
+      width: 100%;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+    }
+
+    button {
+      margin: 10px;
+    }
+
+    #exception {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container" style="width: 100%; max-width: 100%;">
+    <div class="row">
+      <h4>Improvgramming - Shader Mode</h4>
+
+      <div class="two-columns">
+        <div id="editor"></div>
+        <canvas id="c"></canvas>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <h6>Errors:</h6>
+      <p id="glsl-errors"></p>
+    </div> -->
+    <div class="row">
+      <button id="runButton">Run!</button>
+    </div>
+  </div>
+
+
+  <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script type="module" src="shadertoy.mjs"></script>
+  <script type="module" src="ace_setup.mjs"></script>
+
+  <script src="https://togetherjs.com/togetherjs-min.js"></script>
+  <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+</body>
+
+</html>
