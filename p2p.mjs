@@ -10,6 +10,7 @@ peer.on('open', function (id) {
 var theConn = null;
 peer.on('connection', function (conn) {
     theConn = conn;
+    console.log('Got connection event');
     setupConn();
 });
 
@@ -26,6 +27,7 @@ export function registerReceiveHandler(type, cb) {
 }
 
 function setupButtons() {
+    console.log('Setting up buttons...');
     let connectButton = document.querySelector("#connect");
     connectButton.onclick = function () {
         console.log('Connecting to:', idText.value);
@@ -42,6 +44,8 @@ function setupConn() {
     });
     theConn.on('open', function () {
         console.log('Connected!');
+        // document.querySelector('#connect').style.display = 'none';
+        // document.querySelector('#connected').style.display = 'block';
         theConn.on('data', function (data) {
             // console.log('Received', data);
             let type = data['type'];
