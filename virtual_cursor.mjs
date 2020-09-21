@@ -3,7 +3,13 @@ import { send, registerReceiveHandler } from './p2p.mjs';
 let cursor = document.querySelector("#virtual_cursor");
 let body = document.querySelector("body");
 
+let visible = false;
+
 registerReceiveHandler('mouse', function (data) {
+    if (!visible) {
+        visible = true;
+        cursor.style.display = 'block';
+    }
     let [what, x, y] = data;
     if (what == 'move') {
         cursor.style.left = x;
@@ -13,8 +19,9 @@ registerReceiveHandler('mouse', function (data) {
         cursor.style.top = y;
         var img = document.createElement("img");
         img.src = "click.png";
-        img.style.left = x;
-        img.style.top = y;
+        img.style.left = x - 16;
+        img.style.top = y - 16;
+        img.style.zIndex = 90;
         img.classList.add('overlayImg');
         body.appendChild(img);
         setTimeout(function () {

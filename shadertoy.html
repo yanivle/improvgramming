@@ -41,14 +41,12 @@
 </head>
 
 <body>
-
-  <image src="cursor.png" id="virtual_cursor" class="overlayImg"></image>
+  <image src="cursor.png" id="virtual_cursor" style="display: none;" class="overlayImg"></image>
   <image src="click.png" style="display:none"></image>
 
   <div class="container" style="width: 100%; max-width: 100%;">
     <div class="row">
       <h4>Improvgramming - Shader Mode</h4>
-
       <div class="two-columns">
         <div id="editor"></div>
         <canvas id="c"></canvas>
@@ -65,6 +63,10 @@
       Id: <input id="peerjsId" type="text">
       <button id="connect">Connect</button>
     </div>
+
+    <button id="inspirationButton">Inspiration from the crowd</button>
+    <h6 id="inspirationWords"></h6>
+
   </div>
 
 
@@ -75,6 +77,7 @@
   <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
   <script type="module" src="p2p.mjs"></script>
   <script type="module" src="virtual_cursor.mjs"></script>
+  <script type="module" src="inspiration.mjs"></script>
 
 
 </body>
